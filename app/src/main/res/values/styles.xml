@@ -1,0 +1,49 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#086F9C</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#086F9C</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--<item name="windowBackground">#3A579B</item>-->
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <color name="colorAccent">#FF9E9E9E</color>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTabText</item>
+        <item name="tabSelectedTextColor">#666666</item>
+    </style>
+
+    <style name="MyCustomTabText" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:textColor">#cccccc</item>
+    </style>
+
+    <style name="MyCustomTabLayoutlarge" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTabTextlarge</item>
+        <item name="tabSelectedTextColor">#666666</item>
+    </style>
+
+    <style name="MyCustomTabTextlarge" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">24sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
+</resources>
