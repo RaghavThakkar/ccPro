@@ -2869,9 +2869,9 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0d005d;
         public static final int action_mode_bar_stub=0x7f0d005c;
         public static final int action_mode_close_button=0x7f0d0042;
-        public static final int action_rate=0x7f0d00c3;
-        public static final int action_settings=0x7f0d00c4;
-        public static final int action_share=0x7f0d00c2;
+        public static final int action_rate=0x7f0d00c5;
+        public static final int action_settings=0x7f0d00c6;
+        public static final int action_share=0x7f0d00c4;
         public static final int activity_chooser_view_content=0x7f0d0043;
         public static final int adView=0x7f0d0077;
         public static final int addmob=0x7f0d0091;
@@ -3010,7 +3010,9 @@ containing a value of this type.
         public static final int start=0x7f0d0024;
         public static final int status_bar_latest_event_content=0x7f0d00b7;
         public static final int submit_area=0x7f0d006b;
+        public static final int tabImage=0x7f0d00c2;
         public static final int tabMode=0x7f0d000d;
+        public static final int tabText=0x7f0d00c3;
         public static final int tabs=0x7f0d0074;
         public static final int tapToLarge=0x7f0d00aa;
         public static final int tapToLargeHolder=0x7f0d00a9;
@@ -3123,6 +3125,7 @@ containing a value of this type.
         public static final int select_dialog_multichoice_material=0x7f03003a;
         public static final int select_dialog_singlechoice_material=0x7f03003b;
         public static final int support_simple_spinner_dropdown_item=0x7f03003c;
+        public static final int tabbar_view=0x7f03003d;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;

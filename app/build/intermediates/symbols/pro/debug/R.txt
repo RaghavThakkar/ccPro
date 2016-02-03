@@ -853,9 +853,9 @@ int id action_menu_presenter 0x7f0d0003
 int id action_mode_bar 0x7f0d005d
 int id action_mode_bar_stub 0x7f0d005c
 int id action_mode_close_button 0x7f0d0042
-int id action_rate 0x7f0d00c3
-int id action_settings 0x7f0d00c4
-int id action_share 0x7f0d00c2
+int id action_rate 0x7f0d00c5
+int id action_settings 0x7f0d00c6
+int id action_share 0x7f0d00c4
 int id activity_chooser_view_content 0x7f0d0043
 int id adView 0x7f0d0077
 int id addmob 0x7f0d0091
@@ -994,7 +994,9 @@ int id src_over 0x7f0d002a
 int id start 0x7f0d0024
 int id status_bar_latest_event_content 0x7f0d00b7
 int id submit_area 0x7f0d006b
+int id tabImage 0x7f0d00c2
 int id tabMode 0x7f0d000d
+int id tabText 0x7f0d00c3
 int id tabs 0x7f0d0074
 int id tapToLarge 0x7f0d00aa
 int id tapToLargeHolder 0x7f0d00a9
@@ -1103,6 +1105,7 @@ int layout select_dialog_item_material 0x7f030039
 int layout select_dialog_multichoice_material 0x7f03003a
 int layout select_dialog_singlechoice_material 0x7f03003b
 int layout support_simple_spinner_dropdown_item 0x7f03003c
+int layout tabbar_view 0x7f03003d
 int menu main 0x7f0e0000
 int string abc_action_bar_home_description 0x7f060000
 int string abc_action_bar_home_description_format 0x7f060001
