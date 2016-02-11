@@ -35,35 +35,12 @@ public class CountryUtil {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static final String isDefaultSet = "isDefaultSet";
     public static final String fromCountry = "fromCountry";
     public static final String ToCountry = "ToCountry";
     public static final String AllCountry = "AllCountry";
     public static final String FromValue = "FromValue";
+    public static final String Tovalue = "Tovalue";
     public static final String DateTime = "DateTime";
     public static final String UpdateData = "UpdateData";
     public static final String IsfirstTime = "IsfirstTime";
@@ -93,6 +70,14 @@ public class CountryUtil {
 
     public static String getFromValue(Context context) {
         return Prefs.with(context).getString(FromValue, "1");
+    }
+
+    public static void setToValue(Context context, String value) {
+        Prefs.with(context).save(Tovalue, value);
+    }
+
+    public static String getToValue(Context context) {
+        return Prefs.with(context).getString(Tovalue, "0");
     }
 
     public static void setDateAndTime(Context context) {
