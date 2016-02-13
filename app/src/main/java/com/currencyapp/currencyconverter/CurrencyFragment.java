@@ -127,6 +127,10 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
 
 
         try {
+            fromCountry = CountryUtil.getFromCountry(getActivity());
+            toCountry = CountryUtil.getToCountry(getActivity());
+            setCountryNameandFlag(fromCountry, 0);
+            setCountryNameandFlag(toCountry, 1);
             getUserSettings();
             ///mProgressDialog.show();
             changeRateFlag();
@@ -208,12 +212,6 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
         twoyear.setOnClickListener(this);
         fiveyear.setOnClickListener(this);
 
-        fromCountry = CountryUtil.getFromCountry(getActivity());
-        toCountry = CountryUtil.getToCountry(getActivity());
-
-
-        setCountryNameandFlag(fromCountry, 0);
-        setCountryNameandFlag(toCountry, 1);
 
 
         yahoofinanceReal = MyApplication.getRetrofit().create(Interfaces.YahoofinanceReal.class);
@@ -282,14 +280,23 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s != null && s.length() > 0) {
+                String value = s.toString();
 
+                if (value != null && value.length() > 0) {
 
-                    double text = Double.valueOf(s.toString());
-                    if (text > 0) {
-                        CountryUtil.setFromValue(getActivity(), s.toString());
+                    try {
+
+                        if (value.startsWith(".")) {
+
+                            value = 0 + value;
+                            edtFrom.setText(value);
+                            edtFrom.setSelection(edtFrom.getText().length());
+                        }
+                        CountryUtil.setFromValue(getActivity(), value);
                         getRate();
 
+
+                    } catch (Exception e) {
 
                     }
                 }

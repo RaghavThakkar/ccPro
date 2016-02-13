@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.currencyapp.currencyconverter.util.CountryUtil;
 import com.currencyapp.currencyconverter.util.DatabaseHandler;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -98,10 +99,21 @@ public class AddToFavActivity extends AppCompatActivity {
 
                         openDatabase();
                         databaseHandler.updateCourtryTofalse();
+
+                        countries.addAll(selectedCountry);
                         for (Country country : selectedCountry) {
 
                             databaseHandler.updateCountry(country);
+
                         }
+                        if (selectedCountry.size() == 2) {
+                            List<Country> countries = new ArrayList<Country>();
+                            countries.addAll(selectedCountry);
+                            CountryUtil.setFromCountry(AddToFavActivity.this, countries.get(0));
+                            CountryUtil.setToCountry(AddToFavActivity.this, countries.get(1));
+                        }
+
+
                         finish();
                     } else {
                         Toast.makeText(AddToFavActivity.this, "Please select two or more countries", Toast.LENGTH_LONG).show();
