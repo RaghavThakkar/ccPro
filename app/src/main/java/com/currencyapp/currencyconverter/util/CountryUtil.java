@@ -77,7 +77,7 @@ public class CountryUtil {
     }
 
     public static String getToValue(Context context) {
-        return Prefs.with(context).getString(Tovalue, "0");
+        return Prefs.with(context).getString(Tovalue, "1");
     }
 
     public static void setDateAndTime(Context context) {

@@ -363,8 +363,11 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
 
+
                 Intent chartActivity = new Intent(getActivity(), ChartActivity.class);
-                mainActivity.startActivity(chartActivity);
+                chartActivity.putExtra(Intent.EXTRA_UID, mViewPager.getCurrentItem());
+                getActivity().startActivity(chartActivity);
+
 
             }
         });
