@@ -2,34 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-0e6fd05bb54f2c5180fda77801ba14ca3f2fa971.jar" />
-    </item>
-    <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-e451113e9b51cd0c3d5127fb34e993f2e6a2d254.jar" />
-    </item>
-    <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-dbd6efa90ff52fe9c2a96b450be035acfb856f52.jar" />
-    </item>
-    <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-a91247ecea0e6ad0cc74367fbe639a1da9fca968.jar" />
-    </item>
-    <item
         jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -42,6 +14,48 @@
         revision="22.0.1"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
         <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/internal_impl-23.1.1-8a03796c6cb92a3417702fc8343c66f8eedbff3c.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-0e6fd05bb54f2c5180fda77801ba14ca3f2fa971.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-dbd6efa90ff52fe9c2a96b450be035acfb856f52.jar" />
+    </item>
+    <item
+        jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/86b122e640af09b0723e1fa44083c354ba6d9089/glide-3.6.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/glide-3.6.1-bd3330fd4dc58b22745dc34b349b6d7536aa46db.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-e451113e9b51cd0c3d5127fb34e993f2e6a2d254.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-8fbac9f532aa527dec98494d333bdadb7676748d.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/library/1.6.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="773103b47908c3026873309dd5d968b7fc6556eb">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-5389f17233541c7262a232c16bd76212a73fbcf2.jar" />
     </item>
     <item
         jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/utils-v4/1.6.0/jars/classes.jar"
@@ -58,60 +72,11 @@
         <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/okio-1.6.0-e58caa2518229ee92a734f90341b979a039d15cd.jar" />
     </item>
     <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-48b9f29871bb33b18e9a000269cc0ba7ef78729e.jar" />
-    </item>
-    <item
-        jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/gson-2.5-fe600e4761623df101b44fc0e722cf9264105222.jar" />
-    </item>
-    <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/library/1.6.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="773103b47908c3026873309dd5d968b7fc6556eb">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-5389f17233541c7262a232c16bd76212a73fbcf2.jar" />
-    </item>
-    <item
         jar="/home/raghav/.gradle/caches/modules-2/files-2.1/org.jbundle.util.osgi.wrapped/org.jbundle.util.osgi.wrapped.org.apache.http.client/4.1.2/98c86e42679fe7ac066f6c242e0d14f0bce0bb7c/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="98c86e42679fe7ac066f6c242e0d14f0bce0bb7c">
         <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2-e37bdd1c333fd3744af05ee9523f1331d1cc7879.jar" />
-    </item>
-    <item
-        jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/converter-gson/2.0.0-beta2/392c3d09e0f5e7087544093cc0cb23bb9c7af5fa/converter-gson-2.0.0-beta2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/converter-gson-2.0.0-beta2-46ea97c77834844b685295626a1a424d70e7b1b9.jar" />
-    </item>
-    <item
-        jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/86b122e640af09b0723e1fa44083c354ba6d9089/glide-3.6.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/glide-3.6.1-bd3330fd4dc58b22745dc34b349b6d7536aa46db.jar" />
-    </item>
-    <item
-        jar="/mnt/01CDF76F1CC119A0/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/support-annotations-23.1.1-f2094d44e97f378b4c0645e1d2cf7fad125699f5.jar" />
-    </item>
-    <item
-        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-8fbac9f532aa527dec98494d333bdadb7676748d.jar" />
     </item>
     <item
         jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/2.0.0-beta2/880d9e0997b2d1bfc98e0d121ced33ee5d04aac4/retrofit-2.0.0-beta2.jar"
@@ -126,6 +91,41 @@
         revision="22.0.1"
         sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
         <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/okhttp-2.5.0-bce326322cf28422383267edb5f0be6b115842db.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/support-annotations-23.1.1-f2094d44e97f378b4c0645e1d2cf7fad125699f5.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-48b9f29871bb33b18e9a000269cc0ba7ef78729e.jar" />
+    </item>
+    <item
+        jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/converter-gson/2.0.0-beta2/392c3d09e0f5e7087544093cc0cb23bb9c7af5fa/converter-gson-2.0.0-beta2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/converter-gson-2.0.0-beta2-46ea97c77834844b685295626a1a424d70e7b1b9.jar" />
+    </item>
+    <item
+        jar="/home/raghav/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/gson-2.5-fe600e4761623df101b44fc0e722cf9264105222.jar" />
+    </item>
+    <item
+        jar="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/build/intermediates/pre-dexed/pro/release/classes-a91247ecea0e6ad0cc74367fbe639a1da9fca968.jar" />
     </item>
 
 </items>
