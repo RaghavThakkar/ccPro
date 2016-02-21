@@ -32,19 +32,16 @@ public class CountryUtil {
 
 
     public static final String adInterstitial = "ca-app-pub-6733180445570119/8404505582";
-
-
-
     public static final String isDefaultSet = "isDefaultSet";
     public static final String fromCountry = "fromCountry";
     public static final String ToCountry = "ToCountry";
     public static final String AllCountry = "AllCountry";
     public static final String FromValue = "FromValue";
-    public static final String Tovalue = "Tovalue";
     public static final String DateTime = "DateTime";
     public static final String UpdateData = "UpdateData";
     public static final String IsfirstTime = "IsfirstTime";
     public static final String LastEnteredValue = "LastEnteredValue";
+    public static final String Tovalue= "Tovalue";
     static Gson gson = MyApplication.getInstance().getGson();
     static SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm aa");
 
@@ -64,6 +61,7 @@ public class CountryUtil {
         return Prefs.with(context).getString(LastEnteredValue, "1");
     }
 
+
     public static void setFromValue(Context context, String value) {
         Prefs.with(context).save(FromValue, value);
     }
@@ -79,6 +77,7 @@ public class CountryUtil {
     public static String getToValue(Context context) {
         return Prefs.with(context).getString(Tovalue, "1");
     }
+
 
     public static void setDateAndTime(Context context) {
         Date date = new Date();

@@ -37,10 +37,6 @@
         </Preference>
     </PreferenceCategory>
 
-    <!--<PreferenceCategory android:title="@string/pref_Ad_Settings">-->
-        <!--<Preference-->
-            <!--android:key="removead"-->
-            <!--android:title="Pro Version Only" />-->
-    <!--</PreferenceCategory>-->
+
 
 </PreferenceScreen>

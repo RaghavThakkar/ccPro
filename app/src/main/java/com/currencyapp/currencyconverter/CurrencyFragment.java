@@ -131,6 +131,7 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
             toCountry = CountryUtil.getToCountry(getActivity());
             setCountryNameandFlag(fromCountry, 0);
             setCountryNameandFlag(toCountry, 1);
+
             getUserSettings();
             ///mProgressDialog.show();
             changeRateFlag();
@@ -213,7 +214,6 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
         fiveyear.setOnClickListener(this);
 
 
-
         yahoofinanceReal = MyApplication.getRetrofit().create(Interfaces.YahoofinanceReal.class);
 
 
@@ -280,6 +280,7 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
                 String value = s.toString();
 
                 if (value != null && value.length() > 0) {
@@ -363,11 +364,9 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
 
-
                 Intent chartActivity = new Intent(getActivity(), ChartActivity.class);
                 chartActivity.putExtra(Intent.EXTRA_UID, mViewPager.getCurrentItem());
                 getActivity().startActivity(chartActivity);
-
 
             }
         });
@@ -398,7 +397,7 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
 
             ImageFragment imageFragment = (ImageFragment) fragment;
             String time = YahooAPi.maps[mViewPager.getCurrentItem()];
-            String url = String.format("http://chart.finance.yahoo.com/z?s=%s%s=x&t=%s&q=l&m=on&z=m", fromCountry.shortName, toCountry.shortName, time);
+            String url = String.format("http://chart.finance.yahoo.com/z?s=%s%s=x&t=%s&q=l&m=on&z=l", fromCountry.shortName, toCountry.shortName, time);
             imageFragment.changeImage(url);
 
         }
