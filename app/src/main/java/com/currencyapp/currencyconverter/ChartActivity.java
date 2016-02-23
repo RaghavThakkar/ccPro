@@ -14,7 +14,7 @@ import com.currencyapp.currencyconverter.util.YahooAPi;
 public class ChartActivity extends AppCompatActivity {
 
     private String time, spinnerone, spinnertwo;
-    com.google.android.gms.ads.AdRequest adRequest;
+
     private String url = "http://chart.finance.yahoo.com/z?s=";
     //GBPINR=x&t=3m&q=l&l=on&z=m";
     private String sub_url = "&q=l&l=on&z=m";

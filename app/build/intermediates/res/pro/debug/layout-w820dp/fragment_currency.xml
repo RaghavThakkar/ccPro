@@ -173,13 +173,6 @@
             android:layout_below="@+id/tapToLargeHolder"
             android:layout_weight="1" />
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/viewpager"
-            ads:adSize="SMART_BANNER"
-            ads:adUnitId="ca-app-pub-6733180445570119/3279220380" />
 
         <LinearLayout
             android:id="@+id/chartHolder"

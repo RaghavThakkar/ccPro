@@ -1,10 +1,18 @@
 package com.currencyapp.currencyconverter;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.DecimalFormat;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -12,35 +20,16 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
 
-import com.currencyapp.currencyconverter.R;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-
-import android.os.CountDownTimer;
-import android.view.Gravity;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class CurrencyActivity extends Activity{
 
 
-	com.google.android.gms.ads.AdRequest adRequest;
+
 	private Spinner spin_one;
 	private String [] val_one; 
 	private EditText edt;
@@ -61,11 +50,6 @@ public class CurrencyActivity extends Activity{
 
 
 
-		AdView adView = (AdView) findViewById(R.id.adView);
-		// Request for Ads
-		adRequest = new com.google.android.gms.ads.AdRequest.Builder()
-				.build();
-		adView.loadAd(adRequest);
 
 
 
@@ -166,16 +150,7 @@ public class CurrencyActivity extends Activity{
 		return build.toString();
 	}
 	
-	private void addmob() {
-		com.google.android.gms.ads.AdView adView = new com.google.android.gms.ads.AdView(CurrencyActivity.this);
-		adView.setAdUnitId("ca-app-pub-6733180445570119/3279220380");
-		adView.setAdSize(AdSize.BANNER);
-		RelativeLayout layout = (RelativeLayout)findViewById(R.id.addmob_currency);        
-		layout.addView(adView);
-		layout.setGravity(Gravity.CENTER);
-		com.google.android.gms.ads.AdRequest request = new com.google.android.gms.ads.AdRequest.Builder().build();
-		adView.loadAd(request);
-	}
+
 	
 	public class Euro extends AsyncTask<String,String,String>{
 		String to,from;
@@ -192,17 +167,7 @@ public class CurrencyActivity extends Activity{
 		@Override
 		protected String doInBackground(String... params) {
 			try {
-				String s = getJson("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22"+to+from+"%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=");	                    
-				JSONObject jObj;
-				jObj = new JSONObject(s);
-				String exResult = jObj.getJSONObject("query").getJSONObject("results").getJSONObject("rate").getString("Rate");
-				Double value = Double.valueOf(exResult);
-				Double val_edt = Double.valueOf(edt.getText().toString());
-				print = value*val_edt;
-				
-				DecimalFormat df=new DecimalFormat("##.##");
-				String formate = df.format(print); 
-				finalValue = (Double)df.parse(formate) ;
+
 				
 				
 			} catch (Exception e) {
