@@ -64,6 +64,7 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
     CustomTextView txtFrom, txtTo;
     ImageView imgFrom, imgTo, im_chart, imgViceversa;
     Interfaces.YahoofinanceReal yahoofinanceReal;
+    Interfaces.AllCurrencies allCurrencies;
     Country fromCountry;
     Country toCountry;
     CustomEditTextView edtFrom, edtTo;
@@ -122,10 +123,19 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
+        checkData();
 
+    }
 
+    private void checkData() {
         try {
             fromCountry = CountryUtil.getFromCountry(getActivity());
             toCountry = CountryUtil.getToCountry(getActivity());
@@ -155,7 +165,6 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getActivity(), "unable to get data.", Toast.LENGTH_SHORT).show();
 
         }
-
     }
 
     private void init(View rootView) {
@@ -215,6 +224,7 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
 
 
         yahoofinanceReal = MyApplication.getRetrofit().create(Interfaces.YahoofinanceReal.class);
+        allCurrencies = MyApplication.getRetrofitAll().create(Interfaces.AllCurrencies.class);
 
 
         //viewpager
@@ -491,6 +501,62 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
         final Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotation);
 
         imageView.startAnimation(animation);
+
+
+//        Call<Allcurrencies> allcurrenciesCall = allCurrencies.getAllcurrenciesCall();
+//        allcurrenciesCall.enqueue(new Callback<Allcurrencies>() {
+//            @Override
+//            public void onResponse(Response<Allcurrencies> response, Retrofit retrofit) {
+//
+//                try {
+//
+//                    Allcurrencies allcurrencies = response.body();
+//                    ArrayList<Rate> rates = new ArrayList<>();
+//
+//                    if (allcurrencies != null && allcurrencies.list.resources.size() > 0) {
+//
+//
+//                        Rate rateUSd = new Rate();
+//                        rateUSd.Rate = "1";
+//                        rates.add(rateUSd);
+//
+//
+//                        for (All all : allcurrencies.list.resources) {
+//
+//                            if (all.resource.fields.name.contains("USD/")) {
+//
+//                                String name = all.resource.fields.name.replace("USD/", "USD");
+//                                Rate rate = new Rate();
+//                                rate.id = name;
+//                                rate.Name = name;
+//                                rate.Ask = all.resource.fields.name.replace("USD/", "");
+//                                rate.Rate = all.resource.fields.price;
+//                                rates.add(rate);
+//                            }
+//
+//                        }
+//
+//                        if (rates.size() > 0) {
+//
+//                            databaseHandler.saveAllRate(rates);
+//                        }
+//                        CountryUtil.setIsfirstTime(getActivity(), true);
+//                        CountryUtil.setDateAndTime(getActivity());
+//                        mainActivity.setLastUpdatedText();
+//                    }
+//
+//                } catch (Exception e) {
+//
+//                }
+//                imageView.clearAnimation();
+//            }
+//
+//            @Override
+//            public void onFailure(Throwable t) {
+//                imageView.clearAnimation();
+//            }
+//        });
+
         final String query = getQuery(false);
         Call<YahooFinanceReal> yahooFinanceRealCall = yahoofinanceReal.getCurrency(query);
         yahooFinanceRealCall.enqueue(new Callback<YahooFinanceReal>() {
@@ -574,7 +640,7 @@ public class CurrencyFragment extends Fragment implements View.OnClickListener {
                 query = "select * from yahoo.finance.xchange where pair in (" + finalString + " )";
             } else {
                 finalString = fromCountry.shortName.toUpperCase() + toCountry.shortName.toUpperCase();
-                reqString = "\"" + finalString + "," + usd + "\"";
+                reqString = "\"" + finalString +"\""+ "," +"\""+ usd + "\"";
                 query = "select * from yahoo.finance.xchange where pair in (" + reqString + ")";
             }
         } else {

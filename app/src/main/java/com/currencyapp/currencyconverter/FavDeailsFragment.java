@@ -89,7 +89,7 @@ public class FavDeailsFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-
+        getFavCountryList(false);
     }
 
 
