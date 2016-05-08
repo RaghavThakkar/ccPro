@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,24 +16,41 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.currencyapp.currencyconverter.CurrencyFragment;
 import com.currencyapp.currencyconverter.FavDeailsFragment;
+import com.currencyapp.currencyconverter.Model.YahooFinanceReal;
 import com.currencyapp.currencyconverter.R;
 import com.currencyapp.currencyconverter.util.CountryUtil;
+import com.currencyapp.currencyconverter.util.DatabaseHandler;
+import com.currencyapp.currencyconverter.util.Interfaces;
+import com.currencyapp.currencyconverter.util.MyApplication;
 import com.currencyapp.currencyconverter.widget.CustomTextView;
 
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,13 +61,14 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     public CustomTextView lastUpdated;
     public ImageView refresh;
-
+    Interfaces.YahoofinanceReal yahoofinanceReal;
     private int[] tabIcons = {
             R.drawable.ccex,
             R.drawable.ic_christmas_star,
 
     };
     private boolean isOffline = false;
+    private DatabaseHandler databaseHandler;
 
     public Toolbar getToolbar() {
         return toolbar;
@@ -66,17 +85,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        yahoofinanceReal = MyApplication.getRetrofit().create(Interfaces.YahoofinanceReal.class);
+        databaseHandler = new DatabaseHandler(this);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         setupTabLayout(tabLayout);
         tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#666666"));
-        //tabLayout.setupWithViewPager(viewPager);
-        //setupTabIcons();
 
     }
-
 
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
@@ -102,7 +119,144 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("onActivityCreated", "onResume");
         getUserSettings();
+        if (CountryUtil.isCallWebService(this) || !CountryUtil.getIsfirstTime(this)) {
+            callAllDataService();
+        }
+    }
+
+
+    private void callRepeatWebservice() {
+        try {
+
+            SharedPreferences settings = getSharedPreferences("PREFS_NAME", 0);
+            boolean mboolean = settings.getBoolean("FIRST_RUN", false);
+            if (!mboolean) {
+                // do the thing for the first time
+                settings = getSharedPreferences("PREFS_NAME", 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putBoolean("FIRST_RUN", true);
+                editor.commit();
+
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date dt = new Date();
+
+                SharedPreferences.Editor editor2 = getSharedPreferences("user-pref", MODE_PRIVATE).edit();
+                editor2.putString("date", dateFormat.format(dt));
+                editor2.commit();
+
+                Log.e("## Cur Date", "" + dateFormat.format(dt));
+
+                callAllDataService();
+
+
+            } else {
+
+                try {
+                    SharedPreferences prefs = getSharedPreferences("user-pref", MODE_PRIVATE);
+
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+                    String oldDate = prefs.getString("date", null);
+                    Date newdt = dateFormat.parse(dateFormat.format(new Date()));
+                    Date olddt = dateFormat.parse(oldDate);
+
+                    Log.e("## OLD Date", "" + olddt);
+                    Log.e("## New Date", "" + newdt);
+
+                    DateTime jodaOldDate = new DateTime(olddt);
+                    DateTime jodaNewDate = new DateTime(newdt);
+
+
+                    Log.e("## hour time diff", "" + Minutes.minutesBetween(jodaOldDate, jodaNewDate).getMinutes() % 60);
+
+                    //Log.e("## min time diff",""+ Minutes.minutesBetween(jodaOldDate, jodaNewDate).getMinutes() % 60);
+
+                    if (Minutes.minutesBetween(jodaOldDate, jodaNewDate).getMinutes() % 60 >= 10) {
+
+                        DateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                        Date dt = new Date();
+
+                        SharedPreferences.Editor editor2 = getSharedPreferences("user-pref", MODE_PRIVATE).edit();
+                        editor2.putString("date", dateFormat2.format(dt));
+                        editor2.commit();
+
+                        Log.e("## Cur Date chng", "" + dateFormat.format(dt));
+
+
+                        callAllDataService();
+
+
+                    }
+
+
+                } catch (Exception e) {
+                    Log.e("## EXc", e.toString());
+                }
+
+            }
+        } catch (Exception e) {
+            Log.e("#### EXc", e.toString());
+        }
+    }
+
+
+    private void callAllDataService() {
+
+
+        Log.e("refreshData", "refreshData");
+        final Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotation);
+        refresh.startAnimation(animation);
+        final String query = getQuery();
+        Call<YahooFinanceReal> yahooFinanceRealCall = yahoofinanceReal.getCurrency(query);
+
+        yahooFinanceRealCall.enqueue(new Callback<YahooFinanceReal>() {
+            @Override
+            public void onResponse(Response<YahooFinanceReal> response, Retrofit retrofit) {
+                try {
+                    YahooFinanceReal yahooFinanceReal = response.body();
+                    if (yahooFinanceReal != null && yahooFinanceReal.query.results.rate.size() > 0) {
+                        databaseHandler.saveAllRate(yahooFinanceReal.query.results.rate);
+                        CountryUtil.setIsfirstTime(MainActivity.this, true);
+                        CountryUtil.setDateAndTime(MainActivity.this);
+                        setLastUpdatedText();
+                        callFragmentMethod();
+                    }
+
+                } catch (Exception e) {
+
+                }
+
+                refresh.clearAnimation();
+
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
+                refresh.clearAnimation();
+
+            }
+        });
+
+
+    }
+
+    private void callFragmentMethod() {
+        Fragment fragment = adapter.getItem(viewPager.getCurrentItem());
+        if (fragment instanceof CurrencyFragment) {
+
+            CurrencyFragment currencyFragment = (CurrencyFragment) fragment;
+            currencyFragment.offlineModeData(true);
+
+
+        } else if (fragment instanceof FavDeailsFragment) {
+
+            FavDeailsFragment favDeailsFragment = (FavDeailsFragment) fragment;
+            favDeailsFragment.getFavCountryList(true);
+
+        }
     }
 
     @Override
@@ -130,15 +284,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        lastUpdated = (CustomTextView) toolbar.findViewById(R.id.lastUpdated);
-        refresh = (ImageView) toolbar.findViewById(R.id.refresh);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-
+        lastUpdated = (CustomTextView) toolbar.findViewById(R.id.lastUpdated);
+        refresh = (ImageView) toolbar.findViewById(R.id.refresh);
         lastUpdated.setText(String.format("Last Updated %s", CountryUtil.getDateAndTime(this)));
-
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,21 +300,8 @@ public class MainActivity extends AppCompatActivity {
 
                     } else {
 
-
-                        Fragment fragment = adapter.getItem(viewPager.getCurrentItem());
-                        if (fragment instanceof CurrencyFragment) {
-
-                            CurrencyFragment currencyFragment = (CurrencyFragment) fragment;
-                            currencyFragment.callWebServiceAll();
-
-                        } else if (fragment instanceof FavDeailsFragment) {
-
-                            FavDeailsFragment favDeailsFragment = (FavDeailsFragment) fragment;
-                            favDeailsFragment.getFavCountryList(true);
-
-                        }
+                        callAllDataService();
                     }
-
                 } else {
 
                     Toast.makeText(MainActivity.this, "Turn on data connection.\n Turn off the offline mode.", Toast.LENGTH_SHORT).show();
@@ -281,5 +418,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    @NonNull
+    private String getQuery() {
+
+        String finalString = CountryUtil.getToAllCountry(this);
+        String query = "select * from yahoo.finance.xchange where pair in (" + finalString + " )";
+        return query;
+    }
+
 
 }

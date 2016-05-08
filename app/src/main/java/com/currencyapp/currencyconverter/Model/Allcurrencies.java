@@ -5,5 +5,5 @@ package com.currencyapp.currencyconverter.Model;
  */
 public class Allcurrencies {
 
-    public  List list;
+    public List list;
 }

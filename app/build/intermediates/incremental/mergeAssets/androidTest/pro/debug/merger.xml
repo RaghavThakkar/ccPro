@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/src/androidTest/assets"/></dataSet><dataSet config="pro"><source path="/mnt/01CDF76F1CC119A0/Development/Project/Android/Studio/Current Project/CCPRO/CurrencyConverter/app/src/androidTestPro/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/mnt/01CDF76F1CC119A0/Project/ccpro/app/src/androidTest/assets"/></dataSet><dataSet config="pro"><source path="/mnt/01CDF76F1CC119A0/Project/ccpro/app/src/androidTestPro/assets"/></dataSet></merger>

@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 /**
  * Created by raghav on 30/1/16.
  */
-public class AppCustomTextView extends AppCompatTextView{
+public class AppCustomTextView extends AppCompatTextView {
 
     public AppCustomTextView(Context context) {
         super(context);
