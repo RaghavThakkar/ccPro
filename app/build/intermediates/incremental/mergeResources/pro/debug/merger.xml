@@ -1644,7 +1644,6 @@
         <item> British Pound</item>
         <item> Canadian Dollar</item>
         <item> Australian Dollar</item>
-
         <item> UAE Dirham</item>
         <item> Afghan Afghani</item>
         <item> Albanian Lek</item>
@@ -1807,14 +1806,12 @@
         <item> South African Rand</item>
         <item> Zambian Kwacha</item>
     </string-array><string name="oneday">1d</string><string name="pref_online_setting">Online Settings</string><string name="oneyear">1y</string><string-array name="shortName">
-
         <item>USD</item>
         <item>INR</item>
         <item>EUR</item>
         <item>GBP</item>
         <item>CAD</item>
         <item>AUD</item>
-
         <item>AED</item>
         <item>AFN</item>
         <item>ALL</item>
@@ -1976,7 +1973,6 @@
         <item>YER</item>
         <item>ZAR</item>
         <item>ZMW</item>
-
     </string-array><string name="australian">AUD- Australian Dollar</string><string name="indian">INR- Indian Rupee</string><string name="twoyear">2y</string><string name="fiveyear">5y</string><string-array name="spinnerone_name">
         <item>USD</item>
         <item>INR</item>
